@@ -1,0 +1,10 @@
+NetArambho
+    JontraGothon Host A;
+    JontraGothon Host B;
+    ThikanaDao A 10.0.0.1;
+    ThikanaDao B 10.0.0.2;
+
+    ProtirodhDao B "10.0.0.1"; // Block A
+    PacketPathao A B "Should be blocked";
+    PacketNey B;
+NetShesh

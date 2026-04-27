@@ -1,0 +1,11 @@
+NetArambho
+    GhuroChol (3) {
+        Dekhao "Loop iteration";
+    }
+
+    Jodi (1) {
+        Dekhao "Jodi is working";
+    } Nahole {
+        Dekhao "Nahole failed";
+    }
+NetShesh

@@ -1,0 +1,7 @@
+2026-04-27: Initial release of NetXLang.
+- Implemented Lexer with 25 keywords.
+- Implemented Recursive Descent Parser.
+- Implemented Semantic Analyzer for device and IP validation.
+- Implemented Network Simulator (Interpreter) with routing, firewall, and drop simulation.
+- Added 6 example programs.
+- Verified all milestones with unit and integration tests.

@@ -1,0 +1,11 @@
+NetArambho
+    JontraGothon Router R;
+    JontraGothon Host H1;
+    JontraGothon Host H2;
+    JogajogSet R H1;
+    JogajogSet R H2;
+
+    ShobaiPathao R "Broadcast Message";
+    PacketNey H1;
+    PacketNey H2;
+NetShesh

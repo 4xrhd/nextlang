@@ -1,0 +1,6 @@
+NetArambho
+    JontraGothon Host A;
+    JontraGothon Host B;
+    HariyeFelo A 100; // 100% drop
+    PacketPathao A B "Gone forever";
+NetShesh

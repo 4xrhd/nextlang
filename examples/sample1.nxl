@@ -1,0 +1,29 @@
+NetArambho
+    // Device setup
+    JontraGothon Router R1;
+    JontraGothon Host H1;
+    JontraGothon Host H2;
+
+    JogajogSet R1 H1;
+    JogajogSet R1 H2;
+
+    ThikanaDao H1 192.168.1.2;
+    ThikanaDao H2 192.168.1.3;
+    ThikanaDao R1 192.168.1.1;
+
+    Dekhao "Network Setup Complete";
+
+    // Communication
+    PacketPathao H1 H2 "Hello H2!";
+    PacketNey H2;
+
+    // Ping
+    JachaiPing H1 H2;
+
+    // Monitoring
+    NirikhaKoro R1;
+
+    // Delay
+    Bilombho 100;
+    GhotonaLekho "Simulation cycle ended";
+NetShesh
