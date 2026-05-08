@@ -1,0 +1,21 @@
+# Compiled Object files
+*.o
+
+# Compiled Binaries
+netxlang
+netxlang.exe
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*~

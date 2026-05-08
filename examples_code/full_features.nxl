@@ -1,0 +1,56 @@
+NetArambho
+    // Device Initialization
+    JontraGothon Router R1;
+    JontraGothon Client C1;
+    JontraGothon Server S1;
+
+    // Connectivity
+    JogajogSet R1 C1;
+    JogajogSet R1 S1;
+
+    // Addressing
+    ThikanaDao C1 10.0.0.2;
+    ThikanaDao S1 10.0.0.1;
+    ThikanaDao R1 10.0.0.254;
+
+    // Configuration
+    DorjaDao S1 80;
+    NiyomBoshao S1 "HTTP";
+    GotiNiyontron R1 100; // Bandwidth control
+
+    // Security - Firewall Rule
+    ProtirodhDao S1 "192.168.1.99"; // Block bad IP
+
+    // Define a reusable function
+    KajGothon SafeSend() {
+        Dekhao "Initiating Safe Send...";
+        PacketPathao C1 S1 GoponKoro("SecurePayload");
+        PacketNey S1;
+        GhotonaLekho "Secure transmission completed";
+    }
+
+    // Call the function
+    SafeSend();
+
+    // Condition and Loop
+    Jodi (C1) {
+        Dekhao "Client C1 is active";
+    } Nahole {
+        Dekhao "Client C1 is inactive";
+    }
+
+    GhuroChol (3) {
+        JachaiPing C1 S1;
+        Bilombho 50;
+    }
+
+    // Broadcast
+    ShobaiPathao R1 "Update Available";
+    PacketNey C1;
+    PacketNey S1;
+
+    // Monitoring
+    NirikhaKoro S1;
+
+    Dekhao "Full Simulation Finished";
+NetShesh

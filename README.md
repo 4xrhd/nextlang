@@ -1,39 +1,65 @@
-# NetXLang
+# NetXLang: A Network-Oriented Bengali DSL
 
-NetXLang is a Network-Oriented Bengali Domain Specific Language (DSL) designed for simulating network topologies, packet routing, and security policies.
+NetXLang is a custom domain-specific language (DSL) designed for network simulation and security modeling. It abstracts networking operations like packet transmission, routing, firewall enforcement, encryption, and traffic monitoring into simple, Bengali-inspired function keywords.
 
 ## Features
-- Full compiler pipeline (Lexer, Parser, Semantic Analyzer, Interpreter).
-- 25 keywords for network simulation.
-- Virtual network device registry and packet routing simulation.
-- Firewall rules (`ProtirodhDao`) and packet loss simulation (`HariyeFelo`).
-- Encryption simulation (AES-256 placeholder).
-- Control flow (`Jodi`, `Nahole`, `GhuroChol`).
+- **25 Unique Primitives**: Mapping directly to networking concepts.
+- **Bengali-Inspired Syntax**: Accessible for students.
+- **Simple Implementation**: The entire compiler and interpreter are contained in a single `main.cpp` file.
+- **Security Simulation**: Built-in encryption (`GoponKoro`) and decryption (`UghatKoro`).
+
+## Language Specification
+
+| Standard Concept | NetXLang Function | Description |
+|------------------|-------------------|-------------|
+| Start Network | `NetArambho` | Initialize session |
+| End Network | `NetShesh` | End session |
+| Create Device | `JontraGothon` | Create a node |
+| Connect Devices | `JogajogSet` | Link two nodes |
+| Assign IP | `ThikanaDao` | Assign IP address |
+| Assign Port | `DorjaDao` | Assign port |
+| Send Packet | `PacketPathao` | Send data |
+| Receive Packet | `PacketNey` | Accept data |
+| Broadcast | `ShobaiPathao` | Send to all |
+| Routing | `PothNirdharon` | Define path |
+| Ping | `JachaiPing` | Test reachability |
+| Delay | `Bilombho` | Simulate latency |
+| Drop Packet | `HariyeFelo` | Simulate loss |
+| Bandwidth Control| `GotiNiyontron` | Set throughput |
+| Set Protocol | `NiyomBoshao` | Define protocol |
+| Firewall Rule | `ProtirodhDao` | Block target |
+| Encrypt | `GoponKoro` | Encrypt data |
+| Decrypt | `UghatKoro` | Decrypt data |
+| Monitor Traffic | `NirikhaKoro` | Monitor node |
+| Log Event | `GhotonaLekho` | Log an event |
+| Condition | `Jodi` / `Nahole` | If-Else logic |
+| Loop | `GhuroChol` | Repeat actions |
+| Function Define | `KajGothon` | Define reusable code |
+| Output | `Dekhao` | Print message |
+
+## Building and Running
+
+### Build
+```bash
+make
+```
+
+### Run
+```bash
+./netxlang examples/full_features.nxl
+```
 
 ## Project Structure
-- `/src`: C++17 source code.
-- `/grammar`: BNF grammar file.
-- `/examples`: Sample `.nxl` programs.
-- `/tests`: Unit and integration tests.
-- `/docs`: Language reference and design notes.
+- `main.cpp`: The complete source code.
+- `examples/`: Sample `.nxl` programs.
+- `Makefile`: Build instructions.
+- `nexxtlang.pdf`: Project proposal and specification.
 
-## Build Instructions (Windows 11)
-Requires `g++` (MinGW or MSYS2) and `make`/`cmake` (optional).
+## Author
+**Sabikun Nahar Alina**  
+ID: 1016 | Batch: CSE 54  
+University of Information Technology and Sciences (UITS)
 
-### Using g++ directly:
-```powershell
-g++ -std=c++17 -Isrc src/lexer.cpp src/parser.cpp src/semantic.cpp src/interpreter.cpp src/main.cpp -o netxlang.exe
-```
+---
 
-### Running an example:
-```powershell
-./netxlang.exe examples/sample1.nxl
-```
-
-### Running tests:
-```powershell
-./run_tests.bat
-```
-
-## Language Reference
-See [docs/language_reference.md](docs/language_reference.md) for a full list of keywords and syntax.
+**For more details, see the full [DOCUMENTATION.md](DOCUMENTATION.md).**
