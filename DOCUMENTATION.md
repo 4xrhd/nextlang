@@ -42,6 +42,34 @@ NetShesh
 
 ## 2. Function Reference (25 Primitives)
 
+| # | NetXLang Function | Networking Concept | Technical Working |
+|---|-------------------|-------------------|-------------------|
+| 1 | `NetArambho` | Session Start | Initializes the interpreter and simulation environment. |
+| 2 | `NetShesh` | Session End | Safely terminates the simulation and prints final logs. |
+| 3 | `JontraGothon` | Device Creation | Allocates a new virtual node (Router, Host, Server) in memory. |
+| 4 | `JogajogSet` | Physical Link | Establishes a bidirectional adjacency between two virtual nodes. |
+| 5 | `ThikanaDao` | IP Assignment | Assigns a unique IPv4 address to a specific virtual node. |
+| 6 | `DorjaDao` | Port Assignment | Assigns a listening network port to a virtual node. |
+| 7 | `PacketPathao` | Data Transmission | Routes a packet from source to destination via the link layer. |
+| 8 | `PacketNey` | Packet Processing | Pops the first packet from a device's queue and processes it. |
+| 9 | `ShobaiPathao` | Broadcast | Floods a packet to all immediate neighbors of the source. |
+| 10 | `PothNirdharon` | Static Routing | Adds an entry to the virtual routing table for path optimization. |
+| 11 | `JachaiPing` | ICMP Echo | Verifies reachability between two nodes in the topology. |
+| 12 | `Bilombho` | Latency Simulation | Blocks execution for N milliseconds to simulate network lag. |
+| 13 | `HariyeFelo` | Packet Loss | Sets a percentage-based drop rate on a specific node. |
+| 14 | `GotiNiyontron` | QoS / Bandwidth | Implements a simulated bitrate limit on a virtual device. |
+| 15 | `NiyomBoshao` | Protocol Selection | Sets the active protocol layer (HTTP, HTTPS, FTP) for a node. |
+| 16 | `ProtirodhDao` | Firewall Rule | Blacklists an IP address to block incoming traffic at the node. |
+| 17 | `NirikhaKoro` | State Monitoring | Dumps the internal state (IP, Queue, Protocol) of a device. |
+| 18 | `GhotonaLekho` | Event Logging | Prints a formatted timestamped log message to the console. |
+| 19 | `Dekhao` | Output Stream | Standard output for printing expressions or variable results. |
+| 20 | `Jodi` | Conditional (If) | Executes a block if the target device exists or condition is met. |
+| 21 | `Nahole` | Conditional (Else) | Executes an alternative block if the `Jodi` condition fails. |
+| 22 | `GhuroChol` | Iteration (Loop) | Repeats a sequence of network operations N times. |
+| 23 | `KajGothon` | Encapsulation | Defines a reusable procedure (function) for complex tasks. |
+| 24 | `GoponKoro` | Encryption | Transforms plaintext using a Caesar-shift based cipher. |
+| 25 | `UghatKoro` | Decryption | Reverses the encryption transformation to retrieve plaintext. |
+
 ### 2.1 Network Setup
 
 #### `JontraGothon <Type> <Name>;`
@@ -213,18 +241,28 @@ NetArambho
 NetShesh
 ```
 
+## 4. Examples
+
+### 4.1 Security Audit Scenario
+Demonstrates firewall rules, encryption, and device configuration.
+[security_audit.nxl](examples_code/security_audit.nxl)
+
+### 4.2 Network Broadcast & Loops
+Demonstrates automated repetitive tasks and network-wide updates.
+[broadcast_and_loops.nxl](examples_code/broadcast_and_loops.nxl)
+
 ---
 
-## 4. Compilation & Execution
+## 5. Compilation & Execution
 
-Use the provided `Makefile` to build and test:
+Use the provided `Makefile` to build:
 
 ```bash
 # To build
 make
 
 # To run a script
-./netxlang examples/full_features.nxl
+./netxlang examples_code/full_features.nxl
 
 # To clean build files
 make clean

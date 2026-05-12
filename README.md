@@ -50,8 +50,8 @@ make
 ```
 
 ## Project Structure
-- `main.cpp`: The complete source code.
-- `examples/`: Sample `.nxl` programs.
+- `main.cpp`: The complete source code (streamlined Interpreter architecture).
+- `examples_code/`: Sample `.nxl` programs.
 - `Makefile`: Build instructions.
 - `nexxtlang.pdf`: Project proposal and specification.
 

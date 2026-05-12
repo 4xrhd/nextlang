@@ -1,0 +1,51 @@
+NetArambho
+    // Scenario: Enterprise Network Security Audit
+    
+    // 1. Define Infrastructure
+    JontraGothon Router CoreRouter;
+    JontraGothon Server MainServer;
+    JontraGothon Host AdminPC;
+    JontraGothon Host GuestPC;
+
+    // 2. Setup Connections
+    JogajogSet AdminPC CoreRouter;
+    JogajogSet GuestPC CoreRouter;
+    JogajogSet CoreRouter MainServer;
+
+    // 3. Configure Network
+    ThikanaDao AdminPC 10.0.0.5;
+    ThikanaDao GuestPC 192.168.1.100;
+    ThikanaDao MainServer 10.0.0.1;
+    ThikanaDao CoreRouter 10.0.0.254;
+
+    DorjaDao MainServer 443;
+    NiyomBoshao MainServer HTTPS;
+    GotiNiyontron CoreRouter 1000; // 1000 Mbps
+
+    // 4. Define Security Rules
+    GhotonaLekho "Initializing Firewall Rules...";
+    ProtirodhDao MainServer 192.168.1.100; // Block GuestPC
+    
+    // 5. Audit Function
+    KajGothon RunAudit() {
+        GhotonaLekho "Starting Connectivity Audit...";
+        JachaiPing AdminPC MainServer;
+        JachaiPing GuestPC MainServer;
+    }
+
+    // 6. Execution
+    RunAudit();
+
+    Dekhao "Simulating Encrypted Admin Login...";
+    PacketPathao AdminPC MainServer GoponKoro("admin_pass_123");
+    PacketNey MainServer;
+
+    Jodi (MainServer) {
+        GhotonaLekho "Audit Trail: Admin Access Verified";
+    } Nahole {
+        GhotonaLekho "Audit Trail: Server Unavailable";
+    }
+
+    NirikhaKoro MainServer;
+    Dekhao "Audit Finished.";
+NetShesh
