@@ -1,6 +1,9 @@
 NetArambho
+    // Packet drop test
     JontraGothon Host A;
     JontraGothon Host B;
+    ThikanaDao A 10.0.0.1;
+    ThikanaDao B 10.0.0.2;
     HariyeFelo A 100; // 100% drop
     PacketPathao A B "Gone forever";
 NetShesh

@@ -1,5 +1,5 @@
 NetArambho
-    // Device setup
+    // Basic network setup
     JontraGothon Router R1;
     JontraGothon Host H1;
     JontraGothon Host H2;
@@ -13,14 +13,14 @@ NetArambho
 
     Dekhao "Network Setup Complete";
 
-    // Communication
+    // Packet communication
     PacketPathao H1 H2 "Hello H2!";
     PacketNey H2;
 
     // Ping
     JachaiPing H1 H2;
 
-    // Monitoring
+    // Monitor router
     NirikhaKoro R1;
 
     // Delay

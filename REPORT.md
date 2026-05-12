@@ -10,20 +10,20 @@
 ---
 
 ## 1. Abstract
-NetXLang is a domain-specific language (DSL) designed to simulate network environments and security protocols using Bengali-inspired syntax. The project implements a streamlined, lightweight compiler architecture in C++17. NetXLang allows users to define network topologies, manage traffic, and enforce security rules like firewalls and encryption through a set of 25 specialized primitives.
+NetXLang is a domain-specific language (DSL) designed to simulate basic network behavior with Bengali-inspired commands. The project uses a C++17 interpreter model in a single source file. NetXLang lets users create virtual devices, send packets, apply simple security rules, and observe output logs.
 
 ## 2. Introduction
 ### 2.1 Motivation
-Networking concepts are often difficult for beginners due to the complexity of existing simulation tools. NetXLang aims to lower the barrier to entry by providing a human-readable, semantic language that uses familiar Bengali-rooted terms to describe complex technical operations.
+Networking concepts are often difficult due to the complexity of existing simulation tools. NetXLang aims to lower the barrier to entry by providing a human-readable, semantic language that uses familiar Bengali-rooted terms to describe complex technical operations.
 
 ### 2.2 Objectives
 - To design a lightweight, cross-platform networking DSL.
-- To implement a high-performance, single-pass interpreter model.
+- To implement a simple interpreter model.
 - To simulate real-world networking behaviors like packet loss, latency, and encryption.
 - To provide a functional tool for academic learning in networking and compiler design.
 
 ## 3. System Architecture
-The NetXLang compiler utilizes a streamlined Interpreter architecture to maximize efficiency and readability.
+The NetXLang compiler uses a small interpreter pipeline that is easy to follow in class or lab work.
 
 ```mermaid
 graph TD
@@ -35,17 +35,17 @@ graph TD
 ```
 
 ### 3.1 Compiler Components
-1.  **Word-Based Tokenizer**: A custom parser that segments the source code into commands and arguments while preserving quoted strings.
-2.  **Command Dispatcher (Interpreter)**: A recursive execution engine that maps Bengali-inspired keywords directly to backend simulation functions.
-3.  **NetCompiler Engine (Backend)**: Manages the virtual state of the network, including devices, routing tables, and packet queues.
+1. **Word-Based Tokenizer**: Splits source code into words and keeps quoted strings together.
+2. **Command Dispatcher**: Reads command tokens and calls the matching C++ function.
+3. **Network State Engine**: Stores device state (IP, port, queue, protocol, neighbors, rules).
 
 ## 4. Language Design & Grammar
 NetXLang uses an imperative, block-structured grammar.
 
 ### 4.1 Implementation Model
-Instead of a traditional multi-stage pipeline, NetXLang uses a **direct-execution model**. This reduces memory overhead and allows for rapid simulation of network events.
+Instead of a full multi-pass compiler, NetXLang uses a direct-execution interpreter model. This keeps the implementation small and easier to understand.
 
-### 4.3 Detailed Primitives Table (25 Functions)
+### 4.3 Command Table
 
 | # | NetXLang Function | Networking Concept | Technical Working |
 |---|-------------------|-------------------|-------------------|
@@ -66,7 +66,7 @@ Instead of a traditional multi-stage pipeline, NetXLang uses a **direct-executio
 | 15 | `NiyomBoshao` | Protocol Selection | Sets the active protocol layer (HTTP, HTTPS, FTP) for a node. |
 | 16 | `ProtirodhDao` | Firewall Rule | Blacklists an IP address to block incoming traffic at the node. |
 | 17 | `NirikhaKoro` | State Monitoring | Dumps the internal state (IP, Queue, Protocol) of a device. |
-| 18 | `GhotonaLekho` | Event Logging | Prints a formatted timestamped log message to the console. |
+| 18 | `GhotonaLekho` | Event Logging | Prints a log-style message to the console. |
 | 19 | `Dekhao` | Output Stream | Standard output for printing expressions or variable results. |
 | 20 | `Jodi` | Conditional (If) | Executes a block if the target device exists or condition is met. |
 | 21 | `Nahole` | Conditional (Else) | Executes an alternative block if the `Jodi` condition fails. |
@@ -77,7 +77,7 @@ Instead of a traditional multi-stage pipeline, NetXLang uses a **direct-executio
 
 ## 5. Implementation Details
 ### 5.1 The Simulation Engine
-The core of NetXLang is the `NetCompiler` struct, which maintains a `std::unordered_map<std::string, Device>` representing the virtual network. Each `Device` object stores:
+The core of NetXLang is the `NetCompiler` struct, which maintains a device map for the virtual network. Each `Device` stores:
 - IP Address, Port, and Protocol.
 - Packet Queue (FIFO).
 - Routing Table and Rate Limits.
@@ -96,10 +96,10 @@ A test script was executed to simulate an enterprise security audit.
 - Successfully transmitted encrypted Admin credentials via `GoponKoro`.
 - Verified 100% connectivity for authorized paths.
 
-The actual output matched the expected simulation behavior, confirming the robustness of the command dispatcher.
+The output matched expected simulation behavior for the networking DSL interpreter.
 
 ## 7. Conclusion
-The NetXLang project successfully demonstrates how a domain-specific language can simplify complex systems. By combining Bengali semantics with a high-speed C++ interpreter, the project provides a functional educational tool that meets the requirements of a modern compiler design curriculum.
+The NetXLang project shows how a small domain-specific language can simplify networking concepts. By combining Bengali-inspired commands with a clean C++ interpreter, the project works well as an educational compiler design submission.
 
 ## 8. References
 1.  Aho, A. V., Lam, M. S., Sethi, R., & Ullman, J. D. (2006). *Compilers: Principles, Techniques, and Tools*.

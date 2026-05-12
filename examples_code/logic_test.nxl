@@ -1,9 +1,12 @@
 NetArambho
+    // Loop test
     GhuroChol (3) {
         Dekhao "Loop iteration";
     }
 
-    Jodi (1) {
+    // If/else test (checks if device exists)
+    JontraGothon Host H1;
+    Jodi (H1) {
         Dekhao "Jodi is working";
     } Nahole {
         Dekhao "Nahole failed";

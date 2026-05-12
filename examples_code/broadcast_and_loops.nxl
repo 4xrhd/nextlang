@@ -1,6 +1,5 @@
 NetArambho
-    // Scenario: Network Discovery and Update Broadcast
-    
+    // Broadcast + loop demo
     JontraGothon Router R1;
     JontraGothon Host H1;
     JontraGothon Host H2;
@@ -11,13 +10,13 @@ NetArambho
     JogajogSet H3 R1;
 
     ThikanaDao R1 172.16.0.1;
-    
-    KajGothon SendUpdate(msg) {
-        GhotonaLekho "Broadcasting system update...";
-        ShobaiPathao R1 msg;
+
+    KajGothon SendUpdate() {
+        GhotonaLekho "Broadcasting update...";
+        ShobaiPathao R1 "Version_2.0_Available";
     }
 
-    // Simulate 3 rounds of network heartbeat
+    // 3 heartbeat rounds
     GhuroChol (3) {
         GhotonaLekho "--- Heartbeat Round ---";
         JachaiPing H1 R1;
@@ -26,7 +25,7 @@ NetArambho
         Bilombho 200;
     }
 
-    SendUpdate("Version_2.0_Available");
+    SendUpdate();
 
     PacketNey H1;
     PacketNey H2;

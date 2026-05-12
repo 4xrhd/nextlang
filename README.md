@@ -1,65 +1,57 @@
-# NetXLang: A Network-Oriented Bengali DSL
+# NetXLang Compiler Project
 
-NetXLang is a custom domain-specific language (DSL) designed for network simulation and security modeling. It abstracts networking operations like packet transmission, routing, firewall enforcement, encryption, and traffic monitoring into simple, Bengali-inspired function keywords.
+NetXLang is a small Bengali-inspired DSL for basic network simulation.
 
-## Features
-- **25 Unique Primitives**: Mapping directly to networking concepts.
-- **Bengali-Inspired Syntax**: Accessible for students.
-- **Simple Implementation**: The entire compiler and interpreter are contained in a single `main.cpp` file.
-- **Security Simulation**: Built-in encryption (`GoponKoro`) and decryption (`UghatKoro`).
+## Why this project is simple
+- Single-file implementation in `main.cpp`
+- Simple word-based tokenizer
+- Direct command execution (interpreter style)
+- Easy-to-read command keywords for networking tasks
 
-## Language Specification
+## Core language commands
 
-| Standard Concept | NetXLang Function | Description |
-|------------------|-------------------|-------------|
-| Start Network | `NetArambho` | Initialize session |
-| End Network | `NetShesh` | End session |
-| Create Device | `JontraGothon` | Create a node |
-| Connect Devices | `JogajogSet` | Link two nodes |
-| Assign IP | `ThikanaDao` | Assign IP address |
-| Assign Port | `DorjaDao` | Assign port |
-| Send Packet | `PacketPathao` | Send data |
-| Receive Packet | `PacketNey` | Accept data |
-| Broadcast | `ShobaiPathao` | Send to all |
-| Routing | `PothNirdharon` | Define path |
-| Ping | `JachaiPing` | Test reachability |
-| Delay | `Bilombho` | Simulate latency |
-| Drop Packet | `HariyeFelo` | Simulate loss |
-| Bandwidth Control| `GotiNiyontron` | Set throughput |
-| Set Protocol | `NiyomBoshao` | Define protocol |
-| Firewall Rule | `ProtirodhDao` | Block target |
-| Encrypt | `GoponKoro` | Encrypt data |
-| Decrypt | `UghatKoro` | Decrypt data |
-| Monitor Traffic | `NirikhaKoro` | Monitor node |
-| Log Event | `GhotonaLekho` | Log an event |
-| Condition | `Jodi` / `Nahole` | If-Else logic |
-| Loop | `GhuroChol` | Repeat actions |
-| Function Define | `KajGothon` | Define reusable code |
-| Output | `Dekhao` | Print message |
+| Concept | NetXLang Command | What it does |
+|---|---|---|
+| Start program | `NetArambho` | Start simulation |
+| End program | `NetShesh` | End simulation |
+| Create device | `JontraGothon` | Make a device |
+| Connect devices | `JogajogSet` | Link two devices |
+| Set IP | `ThikanaDao` | Assign IP |
+| Set port | `DorjaDao` | Assign port |
+| Send packet | `PacketPathao` | Send message |
+| Receive packet | `PacketNey` | Read queued packet |
+| Broadcast | `ShobaiPathao` | Send to neighbors |
+| Routing | `PothNirdharon` | Store route entry |
+| Ping test | `JachaiPing` | Print ping success |
+| Delay | `Bilombho` | Wait milliseconds |
+| Packet drop | `HariyeFelo` | Set drop rate |
+| Rate control | `GotiNiyontron` | Set speed value |
+| Protocol | `NiyomBoshao` | Set protocol string |
+| Firewall | `ProtirodhDao` | Block an IP |
+| Monitor | `NirikhaKoro` | Show node state |
+| Log | `GhotonaLekho` | Print log text |
+| Print | `Dekhao` | Print expression |
+| If/else | `Jodi`, `Nahole` | Conditional block |
+| Loop | `GhuroChol` | Repeat a block |
+| Function | `KajGothon` | Define reusable block |
+| Encrypt | `GoponKoro` | Simple +1 char shift |
+| Decrypt | `UghatKoro` | Reverse shift |
 
-## Building and Running
+## Build and run
 
-### Build
 ```bash
 make
+./netxlang examples_code/full_features.nxl
 ```
 
-### Run
-```bash
-./netxlang examples/full_features.nxl
-```
-
-## Project Structure
-- `main.cpp`: The complete source code (streamlined Interpreter architecture).
-- `examples_code/`: Sample `.nxl` programs.
-- `Makefile`: Build instructions.
-- `nexxtlang.pdf`: Project proposal and specification.
+## Project files
+- `main.cpp` - complete tokenizer + interpreter
+- `examples_code/` - sample `.nxl` scripts
+- `Makefile` - compile commands
+- `DOCUMENTATION.md` - full command and syntax guide
+- `REPORT.md` - project report
 
 ## Author
 **Sabikun Nahar Alina**  
 ID: 1016 | Batch: CSE 54  
 University of Information Technology and Sciences (UITS)
-
----
-
-**For more details, see the full [DOCUMENTATION.md](DOCUMENTATION.md).**

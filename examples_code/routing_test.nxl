@@ -1,6 +1,7 @@
 NetArambho
+    // Static routing demo
     JontraGothon Router R1;
     JontraGothon Router R2;
-    PothNirdharon R1 "ExternalNet" R2;
+    PothNirdharon R1 ExternalNet R2;
     GhotonaLekho "Static route configured";
 NetShesh
